@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TareasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::get('/', function () {
 
 
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/index', function () {
+    return view('index');
 });
+
+Route::post('/index',[TareasController::class, 'store'])->name('actividades');
